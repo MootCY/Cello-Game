@@ -13,6 +13,17 @@ let celloHeight = 150;
 let celloImg = new Image();
 celloImg.src="Cello.png";
 
+window.addEventListener('keydown',function(e){
+    if(e.code == 'ArrowUp'){
+        celloXV > -1? celloXV+= 1 : celloXV-= 1;
+        celloYV > -1? celloYV+= 1 : celloYV-= 1;
+    }
+    if(e.code == 'ArrowDown'){
+        celloXV > -1? celloXV-= 1 : celloXV+= 1;
+        celloYV > -1? celloYV-= 1 : celloYV+= 1;
+    }
+});
+
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(celloImg,celloX,celloY,celloWidth,celloHeight);
