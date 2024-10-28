@@ -1,7 +1,7 @@
 let canvas = document.getElementById('canvas');
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
-let ctx = cnavs.getContext('2d');
+let ctx = canvas.getContext('2d');
 
 let celloX = canvas.width/2;
 let celloY = canvas.height/2;
