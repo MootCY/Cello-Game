@@ -19,8 +19,8 @@ window.addEventListener('keydown',function(e){
         celloYV > -1? celloYV+= 1 : celloYV-= 1;
     }
     if(e.code == 'ArrowDown'){
-        celloXV > -1? celloXV-= 1 : celloXV+= 1;
-        celloYV > -1? celloYV-= 1 : celloYV+= 1;
+        celloXV = 6;
+        celloYV = 6;
     }
 });
 
