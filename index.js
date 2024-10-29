@@ -14,14 +14,15 @@ let celloImg = new Image();
 celloImg.src="Cello.png";
 
 window.addEventListener('keydown',function(e){
-    if(e.code == 'ArrowUp'){
-        celloXV > -1? celloXV+= 1 : celloXV-= 1;
-        celloYV > -1? celloYV+= 1 : celloYV-= 1;
+    if(celloXV != 0){
+        if(e.code == 'ArrowUp'){
+            celloXV > -1? celloXV+= 1 : celloXV-= 1;
+        }
     }
-    if(e.code == 'ArrowDown'){
-        celloXV = 6;
-        celloYV = 6;
-    }
+    if(celloXV != 0){
+        if(e.code == 'ArrowUp'){
+            celloYV > -1? celloYV+= 1 : celloYV-= 1;
+        }
 });
 
 function update(){
