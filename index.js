@@ -31,10 +31,10 @@ window.addEventListener('keydown',function(e){
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(celloImg,celloX,celloY,celloWidth,celloHeight);
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = 'white';
     ctx.font = "80px Arial";
-    ctx.fillText("X Velocity: "+celloXV,20,canvas.height-20);
-    ctx.fillText("Y Velocity: "+celloYV,20,canvas.height-20);
+    ctx.fillText("X Velocity: "+Math.abs(celloXV),20,20);
+    ctx.fillText("Y Velocity: "+Math.abs(celloYV),20,100);
 
     celloX+= celloXV;
     celloY+= celloYV;
