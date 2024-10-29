@@ -9,22 +9,43 @@ let celloXV = 0;
 let celloYV = 0;
 let celloWidth = 80;
 let celloHeight = 150;
-
 let celloImg = new Image();
 celloImg.src="Cello.png";
 
+let bounces = 0;
+
 window.addEventListener('keydown',function(e){
         if(e.code == 'ArrowUp'){
-            celloYV++;
+            if(celloYV > -1){
+                celloYV++;
+            }
+            else{
+                celloYV--;
+            }
         }
         if(e.code == 'ArrowDown'){
-            celloYV--;
+            if(celloYV > -1){
+                celloYV--;
+            }
+            else{
+                celloYV++;
+            }
         }
         if(e.code == 'ArrowRight'){
-            celloXV++;
+            if(celloXV > -1){
+                celloXV++;
+            }
+            else{
+                celloXV--;
+            }
         }
         if(e.code == 'ArrowLeft'){
-            celloXV--;
+            if(celloXV > -1){
+                celloXV--;
+            }
+            else{
+                celloXV++;
+            }
         }
 });
 
@@ -33,8 +54,8 @@ function update(){
     ctx.drawImage(celloImg,celloX,celloY,celloWidth,celloHeight);
     ctx.fillStyle = 'white';
     ctx.font = "80px Arial";
-    ctx.fillText("X Velocity: "+Math.abs(celloXV),20,20);
-    ctx.fillText("Y Velocity: "+Math.abs(celloYV),20,100);
+    ctx.fillText("X Velocity: "+Math.abs(celloXV),20,100);
+    ctx.fillText("Y Velocity: "+Math.abs(celloYV),20,200);
 
     celloX+= celloXV;
     celloY+= celloYV;
@@ -46,15 +67,19 @@ function update(){
 function Collision(){
     if(celloX < 0){
         celloXV = -celloXV;
+        bounces++;
     }
     if(celloX + celloWidth > canvas.width){
         celloXV = -celloXV;
+        bounces++;
     }
     if(celloY < 0){
         celloYV = -celloYV;
+        bounces++;
     }
     if(celloY + celloHeight > canvas.height){
         celloYV = -celloYV;
+        bounces++;
     }
 }
 
