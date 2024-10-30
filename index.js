@@ -54,8 +54,9 @@ function update(){
     ctx.drawImage(celloImg,celloX,celloY,celloWidth,celloHeight);
     ctx.fillStyle = 'white';
     ctx.font = "80px Arial";
-    ctx.fillText("X Velocity: "+Math.abs(celloXV),20,100);
-    ctx.fillText("Y Velocity: "+Math.abs(celloYV),20,200);
+    ctx.fillText("X Velocity: "+Math.abs(celloXV),20,80);
+    ctx.fillText("Y Velocity: "+Math.abs(celloYV),20,180);
+    ctx.fillText("Bounces: "+bounces,20,280);
 
     celloX+= celloXV;
     celloY+= celloYV;
