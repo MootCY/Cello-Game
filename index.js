@@ -8,7 +8,7 @@ let celloY = canvas.height/2;
 let celloXV = 0;
 let celloYV = 0;
 let celloWidth = 80;
-let celloHeight = 150;
+let celloHeight = 200;
 let celloImg = new Image();
 celloImg.src="Cello.png";
 
