@@ -5,50 +5,13 @@ let ctx = canvas.getContext('2d');
 
 let celloX = canvas.width/2;
 let celloY = canvas.height/2;
-let celloXV = 0;
-let celloYV = 0;
+let celloXV = 1;
+let celloYV = 1;
 let celloWidth = 150;
 let celloHeight = 200;
 let celloImg = new Image();
-celloImg.src="Cello.png";
-let celloSound = new Audio('String.mp3');
 
 let bounces = 0;
-
-window.addEventListener('keydown',function(e){
-        if(e.code == 'ArrowUp'){
-            if(celloYV > -1){
-                celloYV++;
-            }
-            else{
-                celloYV--;
-            }
-        }
-        if(e.code == 'ArrowDown'){
-            if(celloYV > -1){
-                celloYV--;
-            }
-            else{
-                celloYV++;
-            }
-        }
-        if(e.code == 'ArrowRight'){
-            if(celloXV > -1){
-                celloXV++;
-            }
-            else{
-                celloXV--;
-            }
-        }
-        if(e.code == 'ArrowLeft'){
-            if(celloXV > -1){
-                celloXV--;
-            }
-            else{
-                celloXV++;
-            }
-        }
-});
 
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -70,22 +33,42 @@ function Collision(){
     if(celloX < 0){
         celloXV = -celloXV;
         bounces++;
-        celloSound.play();
+        if(celloXV < 0){
+            celloXV--;
+        }
+        else{
+            celloXV++;
+        }
     }
     if(celloX + celloWidth > canvas.width){
         celloXV = -celloXV;
         bounces++;
-        celloSound.play();
+        if(celloXV < 0){
+            celloXV--;
+        }
+        else{
+            celloXV++;
+        }
     }
     if(celloY < 0){
         celloYV = -celloYV;
         bounces++;
-        celloSound.play();
+        if(celloYV < 0){
+            celloYV--;
+        }
+        else{
+            celloYV++;
+        }
     }
     if(celloY + celloHeight > canvas.height){
         celloYV = -celloYV;
         bounces++;
-        celloSound.play();
+        if(celloYV < 0){
+            celloYV--;
+        }
+        else{
+            celloYV++;
+        }
     }
 }
 
