@@ -7,7 +7,7 @@ let celloX = canvas.width/2;
 let celloY = canvas.height/2;
 let celloXV = 0;
 let celloYV = 0;
-let celloWidth = 80;
+let celloWidth = 150;
 let celloHeight = 200;
 let celloImg = new Image();
 celloImg.src="Cello.png";
@@ -52,7 +52,7 @@ window.addEventListener('keydown',function(e){
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     ctx.drawImage(celloImg,celloX,celloY,celloWidth,celloHeight);
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = 'black';
     ctx.font = "80px Arial";
     ctx.fillText("X Velocity: "+Math.abs(celloXV),20,80);
     ctx.fillText("Y Velocity: "+Math.abs(celloYV),20,180);
