@@ -11,6 +11,7 @@ let celloWidth = 150;
 let celloHeight = 200;
 let celloImg = new Image();
 celloImg.src="Cello.png";
+let celloSound = new Audio('String.mp3');
 
 let bounces = 0;
 
@@ -69,18 +70,22 @@ function Collision(){
     if(celloX < 0){
         celloXV = -celloXV;
         bounces++;
+        celloSound.play();
     }
     if(celloX + celloWidth > canvas.width){
         celloXV = -celloXV;
         bounces++;
+        celloSound.play();
     }
     if(celloY < 0){
         celloYV = -celloYV;
         bounces++;
+        celloSound.play();
     }
     if(celloY + celloHeight > canvas.height){
         celloYV = -celloYV;
         bounces++;
+        celloSound.play();
     }
 }
 
