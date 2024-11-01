@@ -10,6 +10,7 @@ let celloYV = 1;
 let celloWidth = 150;
 let celloHeight = 200;
 let celloImg = new Image();
+celloImg.src="Cello.png";
 
 let bounces = 0;
 
@@ -39,6 +40,12 @@ function Collision(){
         else{
             celloXV++;
         }
+        if(celloYV < 0){
+            celloYV--;
+        }
+        else{
+            celloYV++;
+        }
     }
     if(celloX + celloWidth > canvas.width){
         celloXV = -celloXV;
@@ -48,6 +55,12 @@ function Collision(){
         }
         else{
             celloXV++;
+        }
+        if(celloYV < 0){
+            celloYV--;
+        }
+        else{
+            celloYV++;
         }
     }
     if(celloY < 0){
@@ -59,6 +72,12 @@ function Collision(){
         else{
             celloYV++;
         }
+        if(celloXV < 0){
+            celloXV--;
+        }
+        else{
+            celloXV++;
+        }
     }
     if(celloY + celloHeight > canvas.height){
         celloYV = -celloYV;
@@ -68,6 +87,12 @@ function Collision(){
         }
         else{
             celloYV++;
+        }
+        if(celloXV < 0){
+            celloXV--;
+        }
+        else{
+            celloXV++;
         }
     }
 }
