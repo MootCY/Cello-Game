@@ -22,6 +22,8 @@ function update(){
     ctx.fillText("X Velocity: "+Math.abs(celloXV),20,80);
     ctx.fillText("Y Velocity: "+Math.abs(celloYV),20,180);
     ctx.fillText("Bounces: "+bounces,20,280);
+    ctx.fillText("Width: "+celloWidth,20,380);
+    ctx.fillText("Height: "+celloHeight,20,480);
 
     celloX+= celloXV;
     celloY+= celloYV;
