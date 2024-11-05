@@ -7,8 +7,8 @@ let celloX = canvas.width/2;
 let celloY = canvas.height/2;
 let celloXV = 1;
 let celloYV = 1;
-let celloWidth = 150;
-let celloHeight = 200;
+let celloWidth = 50;
+let celloHeight = 80;
 let celloImg = new Image();
 celloImg.src="Cello.png";
 
@@ -34,6 +34,8 @@ function Collision(){
     if(celloX < 0){
         celloXV = -celloXV;
         bounces++;
+        celloWidth++;
+        celloHeight++;
         if(celloXV < 0){
             celloXV--;
         }
@@ -50,6 +52,8 @@ function Collision(){
     if(celloX + celloWidth > canvas.width){
         celloXV = -celloXV;
         bounces++;
+        celloWidth++;
+        celloHeight++;
         if(celloXV < 0){
             celloXV--;
         }
@@ -66,6 +70,8 @@ function Collision(){
     if(celloY < 0){
         celloYV = -celloYV;
         bounces++;
+        celloWidth++;
+        celloHeight++;
         if(celloYV < 0){
             celloYV--;
         }
@@ -82,6 +88,8 @@ function Collision(){
     if(celloY + celloHeight > canvas.height){
         celloYV = -celloYV;
         bounces++;
+        celloWidth++;
+        celloHeight++;
         if(celloYV < 0){
             celloYV--;
         }
